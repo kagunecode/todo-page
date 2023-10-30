@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+<body>
+    <div id="content" class="font-sans flex flex-col h-screen">
+        
+        <div class="relative w-full max-w-lg">
+            <div class="absolute top-[16rem] left-[45rem] w-72 h-72 rounded-full bg-blue-200 mix-blend-multiply filter blur-xl opacity-50 animate-blob ease-in-out"></div>
+            <div class="absolute top-[16rem] -right-[45rem] w-72 h-72 rounded-full bg-blue-200 mix-blend-multiply blur-xl opacity-50 animate-blob animation-delay-2000 ease-in-out"></div>
+            <div class="absolute -bottom-[46rem] left-[52rem] w-72 h-72 rounded-full bg-blue-200 mix-blend-multiply blur-xl opacity-50 animate-blob animation-delay-4000 ease-in-out"></div>
+        </div>
+
+        <nav class="flex h-20 items-center justify-between p-10 z-10">
+            <h1 class="text-2xl font-bold">Todoers Logo</h1>
+            <ul class="flex gap-8 text-gray-400">
+                <li class="hover:text-gray-700 duration-100"><a href="#">Features</a></li>
+                <li class="hover:text-gray-700 duration-100"><a href="#">Contact</a></li>
+                <li class="hover:text-gray-700 duration-100"><a href="#">About</a></li>
+            </ul>
+        </nav>
+
+        <div class="flex-1 flex items-center mx-auto z-10">
+            <div class="flex flex-col items-center">
+                <h1 class="text-7xl font-bold text-center">Create handy to-do <br> lists in a simple way!</h1>
+                <p class="text-4xl font-bold text-gray-500 pt-3">Organize your activities by projects, <br> keeping track of each one of them.</p>
+                <button class="bg-blue-500 mt-5 py-3 px-12 text-white font-semibold text-xl rounded-xl hover:bg-blue-700 duration-100">Get Started</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
