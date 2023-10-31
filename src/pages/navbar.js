@@ -2,9 +2,11 @@ import moonIcon from "../assets/img/moon.svg";
 import sunIcon from "../assets/img/sun.svg";
 
 const navbarLoad = () => {
+	const body = document.querySelector("#general");
+
 	const navbar = document.createElement("nav");
 	navbar.className =
-		"flex h-20 items-center justify-between p-10 sticky top-0 z-20 backdrop-filter backdrop-blur-md";
+		"flex h-20 items-center justify-between p-10 sticky top-0 z-20 backdrop-filter backdrop-blur-lg";
 
 	const pageLogo = document.createElement("h1");
 	pageLogo.innerText = "Todoers Logo";
@@ -51,7 +53,7 @@ const navbarLoad = () => {
 		"duration-100"
 	);
 	const navfeature = document.createElement("a");
-	navfeature.href = "#";
+	navfeature.href = "#features";
 	navfeature.innerText = "Features";
 	navliFeature.appendChild(navfeature);
 
@@ -91,7 +93,7 @@ const navbarLoad = () => {
 	navbar.appendChild(pageLogo);
 	navbar.appendChild(navul);
 
-	return navbar;
+	body.prepend(navbar);
 };
 
 export default navbarLoad;
