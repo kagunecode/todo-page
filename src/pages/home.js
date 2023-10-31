@@ -1,6 +1,9 @@
 const loadHome = () => {
 	const content = document.querySelector("#content");
 
+	const heroSection = document.createElement("section");
+	heroSection.className = "flex-1 flex items-center mx-auto z-10";
+
 	const container = document.createElement("div");
 	container.className = "flex-1 flex items-center mx-auto z-10";
 
@@ -8,7 +11,7 @@ const loadHome = () => {
 	textContainer.className = "flex flex-col items-center";
 
 	const mainText = document.createElement("h1");
-	mainText.className = "text-7xl font-bold text-center";
+	mainText.className = "text-7xl font-bold text-center dark:text-white";
 	mainText.innerText = "Create handy to-do \n lists in a simple way!";
 
 	const descText = document.createElement("p");
@@ -26,8 +29,8 @@ const loadHome = () => {
 	textContainer.appendChild(descText);
 	textContainer.appendChild(startButton);
 
-	container.appendChild(textContainer);
-	content.appendChild(container);
+	heroSection.appendChild(textContainer);
+	content.appendChild(heroSection);
 };
 
 export default loadHome;

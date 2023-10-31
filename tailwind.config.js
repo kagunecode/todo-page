@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	content: ["./dist/*.{html,js}"],
+	darkMode: "class",
 	theme: {
 		extend: {
 			animation: {
@@ -15,7 +16,7 @@ module.exports = {
 						transform: "translate(3rem, 3rem) scale(1.1)",
 					},
 					"66%": {
-						transform: "translate(-5rem, -3rem) scale(0.9)",
+						transform: "translate(-3rem, -3rem) scale(0.9)",
 					},
 					"100%": {
 						transform: "translate(0rem, 0rem) scale(1)",
