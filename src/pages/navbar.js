@@ -1,3 +1,6 @@
+import moonIcon from "../assets/img/moon.svg";
+import sunIcon from "../assets/img/sun.svg";
+
 const navbarLoad = () => {
 	const navbar = document.createElement("nav");
 	navbar.className =
@@ -8,7 +11,33 @@ const navbarLoad = () => {
 	pageLogo.classList.add("text-2xl", "font-bold", "dark:text-white");
 
 	const navul = document.createElement("ul");
-	navul.classList.add("flex", "gap-8", "text-gray-400");
+	navul.classList.add("flex", "gap-8", "text-gray-400", "items-center");
+
+	const navliMoon = document.createElement("li");
+	navliMoon.classList.add(
+		"dark:hover:text-white",
+		"hover:stroke-gray-700",
+		"duration-100",
+		"hover:cursor-pointer"
+	);
+	const navMoon = document.createElement("img");
+	navMoon.src = moonIcon;
+	navMoon.width = "23";
+	navliMoon.id = "moon";
+	navliMoon.appendChild(navMoon);
+
+	const navliSun = document.createElement("li");
+	navliSun.classList.add(
+		"dark:hover:text-white",
+		"hover:text-gray-700",
+		"duration-100",
+		"hover:cursor-pointer"
+	);
+	const navSun = document.createElement("img");
+	navSun.src = sunIcon;
+	navSun.width = "23";
+	navliSun.id = "sun";
+	navliSun.appendChild(navSun);
 
 	const navliFeature = document.createElement("li");
 	navliFeature.classList.add(
@@ -43,9 +72,15 @@ const navbarLoad = () => {
 	navAbout.innerText = "About";
 	navliAbout.appendChild(navAbout);
 
+	const navSeparator = document.createElement("div");
+	navSeparator.innerText = "|";
+
 	navul.appendChild(navliFeature);
 	navul.appendChild(navliContact);
 	navul.appendChild(navliAbout);
+	navul.appendChild(navSeparator);
+	navul.appendChild(navliMoon);
+	navul.appendChild(navliSun);
 
 	navbar.appendChild(pageLogo);
 	navbar.appendChild(navul);
