@@ -79,6 +79,7 @@ const navbarLoad = () => {
 
 	const navSeparator = document.createElement("div");
 	navSeparator.innerText = "|";
+	navSeparator.className = "cursor-default";
 
 	navul.appendChild(navliFeature);
 	navul.appendChild(navliContact);
