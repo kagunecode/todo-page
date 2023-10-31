@@ -8,7 +8,12 @@ const navbarLoad = () => {
 
 	const pageLogo = document.createElement("h1");
 	pageLogo.innerText = "Todoers Logo";
-	pageLogo.classList.add("text-2xl", "font-bold", "dark:text-white");
+	pageLogo.classList.add(
+		"text-2xl",
+		"font-bold",
+		"dark:text-white",
+		"cursor-default"
+	);
 
 	const navul = document.createElement("ul");
 	navul.classList.add("flex", "gap-8", "text-gray-400", "items-center");
