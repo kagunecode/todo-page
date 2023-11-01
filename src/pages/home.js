@@ -15,7 +15,8 @@ const loadHome = () => {
 	mainText.innerText = "Create handy to-do \n lists in a simple way!";
 
 	const descText = document.createElement("p");
-	descText.className = "text-4xl font-bold text-gray-500 pt-3";
+	descText.className =
+		"text-4xl font-bold text-gray-500 pt-3 dark:text-gray-300";
 	descText.innerText =
 		"Organize your activities by projects, \n keeping track of each one of them.";
 
