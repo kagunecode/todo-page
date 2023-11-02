@@ -9,8 +9,13 @@
     <div id="general" class="relative font-sans flex flex-col bg-white dark:bg-slate-800 duration-500">
         <section id="content" class="relative font-sans flex flex-col h-[calc(100vh-5rem)] bg-white dark:bg-slate-800 duration-500">
         </section>
-        <div id="features" class="relative flex font-sans h-[calc(100vh-5rem)] bg-white dark:bg-slate-800 duration-500 items-center overflow-hidden">
-            <div class="flex-1 flex flex-col pl-10">
+        <section id="features" class="relative flex font-sans h-[calc(100vh-5rem)] bg-white dark:bg-slate-800 duration-500 items-center overflow-hidden">
+            <div class="absolute w-full max-w-lg z-0">
+                <div class="absolute -top-[5rem] left-[4rem] w-72 h-72 rounded-full bg-blue-300 dark:bg-black dark:blur-2xl mix-blend-multiply filter blur-xl opacity-90 animate-blob ease-in-out"></div>
+                <div class="absolute -top-[20rem] left-[30rem] w-72 h-72 rounded-full bg-blue-300 dark:bg-black dark:blur-2xl mix-blend-multiply filter blur-xl opacity-90 animate-blob ease-in-out animation-delay-2000"></div>
+                <div class="absolute top-[8rem] left-[40rem] w-72 h-72 rounded-full bg-blue-300 dark:bg-black dark:blur-2xl mix-blend-multiply filter blur-xl opacity-90 animate-blob ease-in-out animation-delay-4000"></div>
+            </div>
+            <div class="flex-1 flex flex-col pl-10 z-20">
                 <h1 class="text-7xl font-bold dark:text-white text-justify">Your time is important. <br> Organize your time and be more efficient.</h1>
                 <p class="text-4xl text-gray-500 dark:text-gray-300 pt-6 text-justify">Don’t let your projects and tasks become a mess. Todoers is the perfect tool to keep you updated on what you need to do.</p>
                 <hr class="my-12 h-0.5 border-t-0 bg-gray-500 opacity-100 dark:opacity-50"/>
@@ -46,7 +51,9 @@
                 <img class="object-cover scale-150 ml-[20rem] rounded-xl" src="./homepageDark.png" alt="Dark Mode snapshot">
             </div>
         </div>
-    </div>
+    </section>
+    <section id="content" class="relative font-sans flex flex-col h-[calc(100vh-5rem)] bg-white dark:bg-slate-800 duration-500">
+        </section>
     <script src="bundle.js"></script>
 </body>
 </html>
