@@ -6,7 +6,7 @@ const navbarLoad = () => {
 
 	const navbar = document.createElement("nav");
 	navbar.className =
-		"flex h-20 items-center justify-between p-10 sticky top-0 z-20 backdrop-filter backdrop-blur-lg";
+		"flex h-20 items-center justify-between p-10 sticky top-0 z-50 backdrop-filter backdrop-blur-lg";
 
 	const pageLogo = document.createElement("h1");
 	pageLogo.innerText = "Todoers Logo";
