@@ -1,7 +1,7 @@
 import renderCircles from "../elements/bgCircles";
 import parseSvg from "../functions/svgParser";
 import ftImage from "../assets/img/homepageDark.png";
-import loginPage from "../views/app.html";
+import loginPage from "html-loader!../views/app.html";
 
 const loadHome = () => {
 	const general = document.querySelector("#general");
