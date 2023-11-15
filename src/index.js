@@ -7,3 +7,8 @@ import switchMode from "./functions/darkMode";
 loadHome();
 navbarLoad();
 switchMode();
+
+document.getElementById("start-button").addEventListener("click", () => {
+	window.location.href = "app.html";
+	console.log("Im button");
+});
