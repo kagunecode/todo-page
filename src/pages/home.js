@@ -1,7 +1,6 @@
 import renderCircles from "../elements/bgCircles";
 import parseSvg from "../functions/svgParser";
 import ftImage from "../assets/img/homepageDark.png";
-import loginPage from "html-loader!../views/app.html";
 
 const loadHome = () => {
 	const general = document.querySelector("#general");
@@ -33,12 +32,11 @@ const loadHome = () => {
 	descText.innerText =
 		"Organize your activities by projects, \n keeping track of each one of them.";
 
-	const startButton = document.createElement("a");
+	const startButton = document.createElement("button");
 	startButton.id = "start-button";
 	startButton.className =
 		"bg-blue-500 mt-5 py-3 px-12 text-white font-semibold text-xl rounded-xl hover:bg-blue-700 duration-100";
 	startButton.innerText = "Get Started";
-	startButton.href = loginPage;
 
 	textContainer.appendChild(mainText);
 	textContainer.appendChild(descText);
