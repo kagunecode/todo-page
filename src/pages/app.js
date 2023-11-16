@@ -1,3 +1,6 @@
-import "../styles.css";
+const menuButton = document.querySelector("#menu-button");
 
-console.log("I'm here");
+menuButton.addEventListener("click", () => {
+	const sidebar = document.querySelector("#sidebar");
+	sidebar.classList.toggle("-translate-x-[100%]");
+});
