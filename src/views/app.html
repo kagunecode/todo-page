@@ -4,13 +4,13 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Todoers</title>
-		<link rel="stylesheet" href="../tailwind.css" />
-		<script defer src="../pages/app.js"></script>
+		<!-- <link rel="stylesheet" href="../tailwind.css" /> -->
+		<!--<script defer src="../pages/app.js"></script> -->
 	</head>
 	<body class="h-screen">
 		<nav
 			id="navbar"
-			class="flex h-14 w-full bg-blue-300 items-center justify-between"
+			class="flex h-10 w-full bg-blue-300 items-center justify-between px-3"
 		>
 			<div class="flex items-center">
 				<svg
@@ -20,7 +20,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white pl-2 hover:text-slate-500 hover:cursor-pointer duration-300"
+					class="w-8 h-8 p-[0.1rem] text-white hover:bg-blue-400 hover:cursor-pointer duration-300 rounded"
 				>
 					<path
 						stroke-linecap="round"
@@ -34,7 +34,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white pl-3"
+					class="w-8 h-8 text-white hover:bg-blue-400 hover:cursor-pointer rounded ml-2 p-[0.1rem] duration-300"
 				>
 					<path
 						stroke-linecap="round"
@@ -44,7 +44,7 @@
 				</svg>
 				<div
 					id="search-container"
-					class="flex h-8 bg-white w-[15rem] ml-4 rounded-md items-center"
+					class="flex h-7 bg-white w-[15rem] ml-4 rounded-md items-center"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@
 						viewBox="0 0 24 24"
 						stroke-width="1"
 						stroke="currentColor"
-						class="w-6 h-6 ml-2 text-gray-600"
+						class="w-8 h-8 p-1 ml-1 text-gray-600 duration-300"
 					>
 						<path
 							stroke-linecap="round"
@@ -62,7 +62,7 @@
 					</svg>
 					<input
 						type="text"
-						class="ml-2 w-[100%] border-none outline-none pr-1"
+						class="ml-2 w-[80%] border-none outline-none pr-1 duration-300"
 					/>
 				</div>
 			</div>
@@ -73,7 +73,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white mr-4"
+					class="w-8 h-8 p-[0.1rem] text-white mr-4 hover:cursor-pointer hover:bg-blue-400 rounded duration-300"
 				>
 					<path
 						stroke-linecap="round"
@@ -87,7 +87,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white mr-4"
+					class="w-8 h-8 p-[0.1rem] text-white mr-4 hover:cursor-pointer hover:bg-blue-400 rounded duration-300"
 				>
 					<path
 						stroke-linecap="round"
@@ -175,9 +175,7 @@
 					<p class="text-slate-500">5</p>
 				</div>
 			</div>
-			<div id="content">
-				<h1>Hello Todoers</h1>
-			</div>
+			<div id="content"></div>
 		</div>
 	</body>
 </html>
