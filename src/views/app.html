@@ -6,8 +6,11 @@
 		<title>Todoers</title>
 		<link rel="stylesheet" href="../tailwind.css" />
 	</head>
-	<body class="h-full">
-		<nav class="flex h-14 w-full bg-blue-300 items-center justify-between">
+	<body class="h-screen">
+		<nav
+			id="navbar"
+			class="flex h-14 w-full bg-blue-300 items-center justify-between"
+		>
 			<div class="flex items-center">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -92,5 +95,7 @@
 				</svg>
 			</div>
 		</nav>
+
+		<div id="content" class="h-[calc(100%-3.5rem)] bg-slate-600"></div>
 	</body>
 </html>
