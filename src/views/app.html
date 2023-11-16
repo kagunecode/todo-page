@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Todoers</title>
-		<!-- <link rel="stylesheet" href="../tailwind.css" /> -->
-		<!--<script defer src="../pages/app.js"></script> -->
+		<link rel="stylesheet" href="../tailwind.css" />
+		<script defer src="../pages/app.js"></script>
 	</head>
 	<body class="h-screen">
 		<nav
@@ -98,10 +98,13 @@
 			</div>
 		</nav>
 
-		<div id="screen-space" class="flex h-[calc(100%-3.5rem)]">
+		<div
+			id="screen-space"
+			class="flex h-[calc(100%-2.5rem)] -ml-[21rem] duration-300 ease-in-out"
+		>
 			<div
 				id="sidebar"
-				class="h-full bg-slate-100 w-[18%] pt-10 pl-6 duration-300 ease-in-out"
+				class="h-full bg-slate-100 w-[21rem] pt-10 pl-6 duration-300 ease-in-out -translate-x-[100%]"
 			>
 				<div
 					id="sidebar-items"
@@ -175,7 +178,9 @@
 					<p class="text-slate-500">5</p>
 				</div>
 			</div>
-			<div id="content"></div>
+			<div id="content">
+				<h1>Hello</h1>
+			</div>
 		</div>
 	</body>
 </html>
