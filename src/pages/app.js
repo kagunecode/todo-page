@@ -1,3 +1,5 @@
+import "../styles.css";
+
 const menuButton = document.querySelector("#menu-button");
 
 menuButton.addEventListener("click", () => {
