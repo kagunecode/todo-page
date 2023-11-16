@@ -4,18 +4,23 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Todoers</title>
-		<link rel="stylesheet" href="b4ad252adaf9ceb9af99.css" />
+		<!-- <link rel="stylesheet" href="../tailwind.css" /> -->
+		<!--<script defer src="../pages/app.js"></script> -->
 	<script defer src="app.bundle.js"></script></head>
-	<body class="h-full">
-		<nav class="flex h-14 w-full bg-blue-300 items-center justify-between">
+	<body class="h-screen">
+		<nav
+			id="navbar"
+			class="flex h-10 w-full bg-blue-300 items-center justify-between px-3"
+		>
 			<div class="flex items-center">
 				<svg
+					id="menu-button"
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white pl-2"
+					class="w-8 h-8 p-[0.1rem] text-white hover:bg-blue-400 hover:cursor-pointer duration-300 rounded"
 				>
 					<path
 						stroke-linecap="round"
@@ -29,7 +34,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white pl-3"
+					class="w-8 h-8 text-white hover:bg-blue-400 hover:cursor-pointer rounded ml-2 p-[0.1rem] duration-300"
 				>
 					<path
 						stroke-linecap="round"
@@ -39,7 +44,7 @@
 				</svg>
 				<div
 					id="search-container"
-					class="flex h-8 bg-white w-[15rem] ml-4 rounded-md items-center"
+					class="flex h-7 bg-white w-[15rem] ml-4 rounded-md items-center"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -47,7 +52,7 @@
 						viewBox="0 0 24 24"
 						stroke-width="1"
 						stroke="currentColor"
-						class="w-6 h-6 ml-2 text-gray-600"
+						class="w-8 h-8 p-1 ml-1 text-gray-600 duration-300"
 					>
 						<path
 							stroke-linecap="round"
@@ -57,7 +62,7 @@
 					</svg>
 					<input
 						type="text"
-						class="ml-2 w-[100%] border-none outline-none pr-1"
+						class="ml-2 w-[80%] border-none outline-none pr-1 duration-300"
 					/>
 				</div>
 			</div>
@@ -68,7 +73,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white mr-4"
+					class="w-8 h-8 p-[0.1rem] text-white mr-4 hover:cursor-pointer hover:bg-blue-400 rounded duration-300"
 				>
 					<path
 						stroke-linecap="round"
@@ -82,7 +87,7 @@
 					viewBox="0 0 24 24"
 					stroke-width="1"
 					stroke="currentColor"
-					class="w-11 h-11 text-white mr-4"
+					class="w-8 h-8 p-[0.1rem] text-white mr-4 hover:cursor-pointer hover:bg-blue-400 rounded duration-300"
 				>
 					<path
 						stroke-linecap="round"
@@ -92,5 +97,85 @@
 				</svg>
 			</div>
 		</nav>
+
+		<div id="screen-space" class="flex h-[calc(100%-3.5rem)]">
+			<div
+				id="sidebar"
+				class="h-full bg-slate-100 w-[18%] pt-10 pl-6 duration-300 ease-in-out"
+			>
+				<div
+					id="sidebar-items"
+					class="flex justify-between items-center w-[95%] hover:bg-slate-200 rounded-md p-1 hover:cursor-pointer"
+				>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.1"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"
+							/>
+						</svg>
+						<p class="ml-2">Today</p>
+					</div>
+					<p class="text-slate-500">5</p>
+				</div>
+
+				<div
+					id="sidebar-items"
+					class="flex items-center w-[95%] hover:bg-slate-200 rounded-md p-1 hover:cursor-pointer justify-between"
+				>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.1"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+							/>
+						</svg>
+						<p class="ml-2">Upcoming</p>
+					</div>
+					<p class="text-slate-500">5</p>
+				</div>
+
+				<div
+					id="sidebar-items"
+					class="flex items-center w-[95%] hover:bg-slate-200 rounded-md p-1 hover:cursor-pointer justify-between"
+				>
+					<div class="flex">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.1"
+							stroke="currentColor"
+							class="w-6 h-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z"
+							/>
+						</svg>
+						<p class="ml-2">Folders</p>
+					</div>
+					<p class="text-slate-500">5</p>
+				</div>
+			</div>
+			<div id="content"></div>
+		</div>
 	</body>
 </html>
