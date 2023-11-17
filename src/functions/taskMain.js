@@ -7,13 +7,95 @@
 // 6. Task project group
 // 7. Maybe task comments or something of that sort
 
-class Task {
-	constructor(username) {
-		this.userName = username;
-		this.taskArray = [];
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import {
+	createUserWithEmailAndPassword,
+	getAuth,
+	onAuthStateChanged,
+	signInWithEmailAndPassword,
+	updateProfile,
+} from "firebase/auth";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+	apiKey: "AIzaSyCiLNpG3XgkGWcpLtN2DzyJraeJ-riM-aA",
+	authDomain: "todo-app-adf75.firebaseapp.com",
+	projectId: "todo-app-adf75",
+	storageBucket: "todo-app-adf75.appspot.com",
+	messagingSenderId: "484620164961",
+	appId: "1:484620164961:web:ce40d8221e06a923432f20",
+};
+
+class UserAuth {
+	constructor() {
+		this._userList = {};
+		this.currentUser = null;
 	}
 
-	addTask(name, description, date, status, importance, project, comments) {
+	createUser(auth, email, password) {
+		createUserWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				const user = userCredential.user;
+				logger(`The user has been registered.`);
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				logger(errorCode + errorMessage);
+			});
+	}
+
+	login(auth, email, password) {
+		signInWithEmailAndPassword(auth, email, password)
+			.then((userCredential) => {
+				const user = userCredential.user;
+				this.currentUser = auth.currentUser;
+				logger(`Welcome ${auth.currentUser.email}`);
+			})
+			.catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				logger(errorCode + errorMessage);
+			});
+	}
+
+	updateUserName(auth, username) {
+		updateProfile(auth.currentUser, {
+			displayName: username,
+			photoURL: null,
+		})
+			.then(() => {
+				logger("The username has been updated");
+			})
+			.catch((error) => {
+				logger(error);
+			});
+	}
+
+	logout() {
+		this.currentUser = null;
+		logger("See you soon!");
+	}
+
+	getActiveUser() {
+		return this.currentUser;
+	}
+}
+
+class Task {
+	addTask(
+		user,
+		name,
+		description,
+		date,
+		status,
+		importance,
+		project,
+		comments
+	) {
 		let newTask = {
 			name: name,
 			description: description,
@@ -24,12 +106,12 @@ class Task {
 			comments: comments,
 		};
 
-		this.taskArray.push(newTask);
+		user.push(newTask);
 		logger("The task was added!");
 	}
 
-	taskList() {
-		logger(this.taskArray);
+	taskList(user) {
+		logger(user);
 	}
 
 	searchTask(taskName) {
@@ -48,32 +130,10 @@ const logger = (message) => {
 	console.log(message);
 };
 
-const user = new Task("Kagune");
-user.addTask(
-	"Task 1",
-	"Something desc",
-	"today",
-	"uncomplete",
-	"high",
-	"webdev",
-	"I have to do this now!"
-);
-user.addTask(
-	"Task 2",
-	"Something desc",
-	"today",
-	"uncomplete",
-	"high",
-	"webdev",
-	"I have to do this now!"
-);
-user.addTask(
-	"Task 3",
-	"Something desc",
-	"today",
-	"uncomplete",
-	"high",
-	"webdev",
-	"I have to do this now!"
-);
-user.searchTask("Task 1");
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+const users = new UserAuth();
+users.login(auth, "kagunecoders@gmail.com", "whatever123");
+users.updateUserName(auth, "KaguneCode");
