@@ -136,11 +136,3 @@ const logger = (message) => {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
-const users = new UserAuth();
-users.login(auth, "kagunecoders@gmail.com", "whatever123");
-
-const testButton = document.querySelector("#test-button");
-testButton.addEventListener("click", () => {
-	users.updateUserName(auth, "Kagune Code");
-});
