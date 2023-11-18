@@ -57,7 +57,14 @@ const navbarLoad = () => {
 	navSeparator.innerText = "|";
 	navSeparator.className = "cursor-default";
 
+	const loginButton = document.createElement("button");
+	loginButton.className =
+		"bg-gray-500 rounded-md hover:bg-blue-500 px-7 py-2 text-white duration-300";
+	loginButton.innerText = "Sign In";
+	loginButton.id = "button-log";
+
 	navul.appendChild(navliFeature);
+	navul.appendChild(loginButton);
 	navul.appendChild(navSeparator);
 	navul.appendChild(navliMoon);
 	navul.appendChild(navliSun);
