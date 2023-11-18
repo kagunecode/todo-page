@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			animation: {
 				blob: "blob 7s infinite",
+				modalf: "modalf 0.15s ease-in-out",
 			},
 			keyframes: {
 				blob: {
@@ -22,8 +23,15 @@ module.exports = {
 						transform: "translate(0rem, 0rem) scale(1)",
 					},
 				},
+				modalf: {
+					"0%": { transform: "scale(0)" },
+					"100%": { transform: "scale(1)" },
+				},
 			},
 		},
 	},
-	plugins: [],
+	plugins: [require("tailwind-scrollbar")],
+	variants: {
+		scrollbar: ["dark"],
+	},
 };
