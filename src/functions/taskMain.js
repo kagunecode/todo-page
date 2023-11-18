@@ -8,6 +8,7 @@
 // 7. Maybe task comments or something of that sort
 
 // Import the functions you need from the SDKs you need
+import "../styles.css";
 import { initializeApp } from "firebase/app";
 import {
 	createUserWithEmailAndPassword,
@@ -68,7 +69,9 @@ class UserAuth {
 			photoURL: null,
 		})
 			.then(() => {
-				logger("The username has been updated");
+				logger(
+					`The username has been updated to ${auth.currentUser.displayName}`
+				);
 			})
 			.catch((error) => {
 				logger(error);
@@ -136,4 +139,8 @@ const auth = getAuth(app);
 
 const users = new UserAuth();
 users.login(auth, "kagunecoders@gmail.com", "whatever123");
-users.updateUserName(auth, "KaguneCode");
+
+const testButton = document.querySelector("#test-button");
+testButton.addEventListener("click", () => {
+	users.updateUserName(auth, "Kagune Code");
+});
