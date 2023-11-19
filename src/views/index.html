@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todoers by Kagune</title>
+	<link rel="stylesheet" href="../tailwind.css">
 <body class="relative">
             <dialog
 			class="items-center shadow-xl flex-col top-0 bottom-0 rounded-lg py-10 px-20 w-[25%] backdrop:backdrop-blur open:animate-modalf dark:bg-slate-800"
@@ -22,18 +23,24 @@
 			</div>
 			<form method="dialog" class="flex flex-col w-full">
 				<input
+				id="input-email"
 					type="email"
-					class="h-12 px-2 outline-none rounded bg-slate-50 border-2 mb-5 focus:border-blue-300 duration-300 dark:bg-slate-950 dark:text-white"
+					class="h-12 px-2 outline-none rounded bg-slate-50 border-2 focus:border-blue-300 duration-300 dark:bg-slate-950 dark:text-white mb-1"
 					placeholder="Email"
 				/>
+				<p id="mail-error" class="mb-5 text-sm text-red-400 h-2"></p>
 				<input
+				id="input-password"
 					type="password"
-					class="h-12 px-2 outline-none rounded bg-slate-50 border-2 focus:border-blue-300 duration-300 dark:bg-slate-950 dark:text-white"
+					class="h-12 px-2 outline-none rounded bg-slate-50 border-2 focus:border-blue-300 duration-300 dark:bg-slate-950 dark:text-white mb-1"
 					placeholder="Password"
 				/>
+				<p id="password-error" class="text-sm text-gray-600 h-2">At least 8 characters long</p>
 			</form>
 			<div class="flex items-center flex-col">
 				<button
+				id="login-button"
+				type="submit"
 					class="bg-gray-400 font-bold justify-center text-white py-3 px-20 mt-5 rounded hover:bg-blue-500 duration-300"
 				>
 					Sign In
