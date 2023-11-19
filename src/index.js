@@ -5,7 +5,7 @@ import loadHome from "./pages/home";
 import switchMode from "./functions/darkMode";
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
 import { login } from "./functions/userAuth";
 import { checkEmail, checkPassword } from "./functions/strVerification";
 
@@ -46,10 +46,25 @@ loginButton.addEventListener("click", () => {
 	if (checkEmail(email) && checkPassword(password)) {
 		login(auth, email, password);
 	}
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+			window.location.href = "app.html";
+		} else {
+			console.log("This is empty!");
+		}
+	});
 });
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
+
+/* signOut(auth)
+	.then(() => {
+		console.log("User Logged Out");
+	})
+	.catch((error) => {
+		console.log(error);
+	}); */
 
 // pass es lacobra11
