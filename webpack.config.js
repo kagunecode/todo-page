@@ -5,7 +5,7 @@ module.exports = {
 	mode: "development",
 	entry: {
 		index: "./src/index.js",
-		app: "./src/functions/taskMain.js",
+		app: "./src/pages/app.js",
 	},
 	output: {
 		path: path.resolve(__dirname, "dist"),
