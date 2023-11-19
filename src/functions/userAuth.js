@@ -1,4 +1,7 @@
+import { initializeApp } from "firebase/app";
 import {
+	getAuth,
+	signOut,
 	createUserWithEmailAndPassword,
 	onAuthStateChanged,
 	signInWithEmailAndPassword,
@@ -8,7 +11,7 @@ import logger from "./logger";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-function createUser(auth, email, password) {
+function createUser(email, password) {
 	createUserWithEmailAndPassword(auth, email, password)
 		.then((userCredential) => {
 			const user = userCredential.user;
@@ -21,7 +24,7 @@ function createUser(auth, email, password) {
 		});
 }
 
-function login(auth, email, password) {
+function login(email, password) {
 	signInWithEmailAndPassword(auth, email, password)
 		.then((userCredential) => {
 			const user = userCredential.user;
@@ -34,7 +37,7 @@ function login(auth, email, password) {
 		});
 }
 
-function updateUserName(auth, username) {
+function updateUserName(username) {
 	updateProfile(auth.currentUser, {
 		displayName: username,
 		photoURL: null,
@@ -49,8 +52,38 @@ function updateUserName(auth, username) {
 		});
 }
 
-function logout() {
-	logger("See you soon!");
+function logOut() {
+	logger("Logout");
+	signOut(auth)
+		.then(() => {
+			window.location.href = "index.html";
+		})
+		.catch((error) => {
+			logger(error);
+		});
 }
 
-export { login };
+function checkIfLogin() {
+	onAuthStateChanged(auth, (user) => {
+		if (user) {
+			window.location.href = "app.html";
+		} else {
+			console.log("This is empty!");
+		}
+	});
+}
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+	apiKey: "AIzaSyCiLNpG3XgkGWcpLtN2DzyJraeJ-riM-aA",
+	authDomain: "todo-app-adf75.firebaseapp.com",
+	projectId: "todo-app-adf75",
+	storageBucket: "todo-app-adf75.appspot.com",
+	messagingSenderId: "484620164961",
+	appId: "1:484620164961:web:ce40d8221e06a923432f20",
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+export { login, logOut, checkIfLogin };
