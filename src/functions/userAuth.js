@@ -73,14 +73,13 @@ function checkIfLogin() {
 	});
 }
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-	apiKey: "AIzaSyCiLNpG3XgkGWcpLtN2DzyJraeJ-riM-aA",
-	authDomain: "todo-app-adf75.firebaseapp.com",
-	projectId: "todo-app-adf75",
-	storageBucket: "todo-app-adf75.appspot.com",
-	messagingSenderId: "484620164961",
-	appId: "1:484620164961:web:ce40d8221e06a923432f20",
+	apiKey: process.env.FIREBASE_API_KEY,
+	authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+	projectId: process.env.FIREBASE_PROJECT_ID,
+	storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+	messagingSenderId: process.env.FIREBASE_SENDER_ID,
+	appId: process.env.FIREABSE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
