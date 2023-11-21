@@ -43,6 +43,14 @@ function renderSignup() {
 	}
 }
 
+function setSignVal(status) {
+	if (status == "signup") {
+		isOnSignin = true;
+	} else {
+		isOnSignin = false;
+	}
+}
+
 function runSignAction() {
 	if (isOnSignin) {
 		runLogin();
@@ -76,4 +84,4 @@ function runSignup() {
 	checkIfLogin();
 }
 
-export { runSignAction, renderSignup };
+export { runSignAction, renderSignup, setSignVal };
