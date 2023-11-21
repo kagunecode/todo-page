@@ -86,4 +86,4 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-export { login, logOut, checkIfLogin };
+export { login, logOut, checkIfLogin, createUser };
