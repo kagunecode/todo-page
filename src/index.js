@@ -1,8 +1,8 @@
 import "./styles.css";
 import {
-	runSignAction,
-	renderSignup,
-	setSignVal,
+  runSignAction,
+  renderSignup,
+  setSignVal,
 } from "./functions/signStatus";
 import navbarLoad from "./pages/navbar";
 import loadHome from "./pages/home";
@@ -15,9 +15,9 @@ switchMode();
 checkIfLogin();
 
 document.getElementById("start-button").addEventListener("click", () => {
-	modal.showModal();
-	setSignVal("signup");
-	renderSignup();
+  modal.showModal();
+  setSignVal("signup");
+  renderSignup();
 });
 
 const modal = document.querySelector("dialog");
@@ -27,21 +27,21 @@ const loginButton = document.querySelector("#login-button");
 const signUpChange = document.querySelector("#change");
 
 closeModal.addEventListener("click", () => {
-	modal.close();
+  modal.close();
 });
 
 buttonUser.addEventListener("click", () => {
-	setSignVal("login");
-	renderSignup();
-	modal.showModal();
+  setSignVal("login");
+  renderSignup();
+  modal.showModal();
 });
 
 loginButton.addEventListener("click", () => {
-	runSignAction();
+  runSignAction();
 });
 
 signUpChange.addEventListener("click", () => {
-	renderSignup();
+  renderSignup();
 });
 
 // pass es lacobra11
