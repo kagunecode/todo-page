@@ -16,6 +16,8 @@ The page supports both light and dark mode. This website is still under developm
 
 ## Updates
 
+The development of this website has been stopped. I'm currently focusing on other projects, however, I'll migrate this whole app to React so that I can continue developing, since making the whole page on JS is not really worth it for several reasons. I'll update this whole repo once I have the new website done.
+
 As of now, I'm not updating the build anymore, so if you want to run any tests please clone the repo and run the instructions on the Deployment section. Also, I'm encapsulating the Firebase variables now so I can work properly on the development of the app. Check the [Testing](#testing) section to learn how to run the project locally on your machine.
 
 - User account creation and login functions are supported as of the current version. Check the [Testing](#testing) section to learn how to properly configure your own Firebase keys to make the project work.
